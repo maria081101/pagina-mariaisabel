@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jardín Pastel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====== Paleta pastel ====== */
+    :root {
+      --crema: #fffaf7;
+      --rosa: #f9d5e5;
+      --rosa-fuerte: #f4a9c8;
+      --lila: #e3d7f8;
+      --menta: #d6f1e6;
+      --texto: #5b4a5e;
+      --texto-suave: #8d7b91;
+      --sombra: 0 10px 30px rgba(180, 140, 190, 0.18);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--crema);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ====== Navegación ====== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 6%;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 250, 247, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--rosa-fuerte); }
+    nav ul { display: flex; gap: 28px; list-style: none; }
+    nav ul a { font-weight: 500; color: var(--texto-suave); transition: color 0.3s; }
+    nav ul a:hover { color: var(--rosa-fuerte); }
+
+    /* ====== Hero ====== */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 6%;
+      background:
+        radial-gradient(circle at 15% 20%, var(--rosa) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, var(--lila) 0%, transparent 40%),
+        radial-gradient(circle at 50% 90%, var(--menta) 0%, transparent 45%),
+        var(--crema);
+    }
+
+    .hero .emoji { font-size: 3rem; margin-bottom: 10px; }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); margin-bottom: 16px; }
+    .hero p { max-width: 520px; color: var(--texto-suave); font-size: 1.1rem; margin-bottom: 34px; }
+
+    /* ====== Botones ====== */
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      border-radius: 50px;
+      background: var(--rosa-fuerte);
+      color: white;
+      font-weight: 600;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(244, 169, 200, 0.5); }
+    .btn.secundario { background: white; color: var(--rosa-fuerte); border: 2px solid var(--rosa); }
+    .botones { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+    /* ====== Sección info ====== */
+    section.info { padding: 80px 6%; text-align: center; }
+    section.info h2 { font-size: 2.2rem; margin-bottom: 40px; }
+
+    .tarjetas-mini {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .mini { padding: 34px 24px; border-radius: 26px; box-shadow: var(--sombra); }
+    .mini:nth-child(1) { background: var(--rosa); }
+    .mini:nth-child(2) { background: var(--lila); }
+    .mini:nth-child(3) { background: var(--menta); }
+    .mini .icono { font-size: 2.2rem; display: block; margin-bottom: 10px; }
+
+    /* ====== Footer ====== */
+    footer { text-align: center; padding: 50px 6%; background: var(--lila); }
+    footer p { margin-bottom: 18px; color: var(--texto); }
+
+    @media (max-width: 600px) {
+      nav ul { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">🌸 Jardín Pastel</a>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="flores.html">Flores</a></li>
+      <!-- CAMBIA "tu_usuario" POR TU USUARIO DE INSTAGRAM -->
+      <li><a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener">Instagram</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <span class="emoji">🌷</span>
+    <h1>Un rinconcito lleno de flores</h1>
+    <p>Descubre los tipos de flores más lindos del mundo, con colores suaves y mucho cariño.</p>
+    <div class="botones">
+      <a href="flores.html" class="btn">Ver tipos de flores</a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" class="btn secundario">Sígueme en Instagram</a>
+    </div>
+  </header>
+
+  <section class="info">
+    <h2>¿Qué vas a encontrar aquí?</h2>
+    <div class="tarjetas-mini">
+      <div class="mini">
+        <span class="icono">🌹</span>
+        <h3>Variedad</h3>
+        <p>Rosas, tulipanes, lavanda y muchas más.</p>
+      </div>
+      <div class="mini">
+        <span class="icono">📸</span>
+        <h3>Imágenes lindas</h3>
+        <p>Fotos que alegran cualquier día.</p>
+      </div>
+      <div class="mini">
+        <span class="icono">💗</span>
+        <h3>Inspiración</h3>
+        <p>Ideas para tu casa, tu marca o tu feed.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Hecho con 💕 y muchos colores pastel</p>
+    <a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener" class="btn">Ir a mi Instagram</a>
+  </footer>
+
+</body>
+</html>
