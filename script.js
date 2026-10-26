@@ -10,5 +10,10 @@ if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
   edad--;
 }
 
-document.getElementById("resultado").innerHTML =
-  "<h2>Hola, " + nombre + ". Tienes " + edad + " años.</h2>";
+if (edad >= 18) {
+    document.getElementById("resultado").innerHTML = 
+        "<h2>Hola, " + nombre + ". Tienes " + edad + " años. ¡Eres mayor de edad, bienvenido!</h2>";
+} else {
+    alert("Lo siento " + nombre + ", eres menor de edad y serás redireccionado.");
+    window.location.href = "https://www.google.com";
+}
